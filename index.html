@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Garden School | The Garden Collective</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>The Garden School | Free GED & Community Support – Hamden, CT</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="The Garden School provides free GED classes, mentorship, meditation, and creative workshops for at-risk and post-detention youth in Hamden, CT. A program of The Garden Collective, a registered 501(c)(3)."
+  />
+  <meta
+    name="keywords"
+    content="GED program Hamden, youth reentry support CT, free GED classes CT, at-risk youth education, community-based learning, trauma-informed GED program, youth mentorship Connecticut, The Garden Collective"
+  />
+
   <style>
     :root {
-      --forest: #1f4a32;
-      --forest-dark: #143021;
-      --cream: #f6f1e9;
-      --soft-gold: #d9a441;
-      --stone: #e2d7c8;
-      --text: #2d2a26;
-      --muted: #5d584f;
-      color-scheme: light;
+      --color-bg: #f7f4ee;
+      --color-surface: #ffffff;
+      --color-primary: #15452f;   /* forest green */
+      --color-primary-soft: #d8e4dc;
+      --color-accent: #c89a3d;    /* soft gold */
+      --color-text: #1f2723;
+      --color-muted: #6c7a72;
+      --radius-lg: 24px;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.08);
+      --max-width: 1100px;
     }
 
     * {
@@ -25,11 +33,10 @@
 
     body {
       margin: 0;
-      font-family: 'Work Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
-      background: var(--cream);
-      color: var(--text);
-      line-height: 1.7;
-      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #e7efe6 0, var(--color-bg) 45%, #fefaf6 100%);
+      color: var(--color-text);
+      line-height: 1.6;
     }
 
     a {
@@ -42,521 +49,631 @@
       display: block;
     }
 
-    header {
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .site-header {
       position: sticky;
       top: 0;
       z-index: 10;
-      background: rgba(246, 241, 233, 0.9);
-      backdrop-filter: blur(6px);
-      border-bottom: 1px solid rgba(31, 74, 50, 0.08);
+      backdrop-filter: blur(16px);
+      background: rgba(247, 244, 238, 0.92);
+      border-bottom: 1px solid rgba(21, 69, 47, 0.06);
     }
 
     .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 16px 22px;
+      gap: 1rem;
     }
 
-    .brand {
+    .nav-left {
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-weight: 600;
-      letter-spacing: 0.3px;
-      color: var(--forest-dark);
+      gap: 0.6rem;
     }
 
-    .leaf {
-      width: 14px;
-      height: 24px;
-      background: linear-gradient(140deg, var(--soft-gold), var(--forest));
-      border-radius: 12px 12px 4px 12px;
-      transform: rotate(-12deg);
-      box-shadow: 0 6px 12px rgba(31, 74, 50, 0.18);
-    }
-
-    nav ul {
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #fef7e6, #15452f);
       display: flex;
-      list-style: none;
-      gap: 18px;
-      padding: 0;
-      margin: 0;
-      font-weight: 500;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.12);
     }
 
-    nav a {
-      padding: 8px 10px;
-      border-radius: 10px;
-      transition: background 0.2s ease, color 0.2s ease;
+    .brand-mark span {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #fdfaf4;
     }
 
-    nav a:focus-visible,
-    nav a:hover {
-      background: var(--forest);
-      color: var(--cream);
-      outline: none;
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-text .title {
+      font-weight: 650;
+      font-size: 1rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .brand-text .subtitle {
+      font-size: 0.8rem;
+      color: var(--color-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      padding: 0.3rem 0.5rem;
+      border-radius: 999px;
+    }
+
+    .nav-links a:hover {
+      background: rgba(21, 69, 47, 0.06);
+    }
+
+    .nav-donate {
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      background: var(--color-primary);
+      color: #fefaf6;
+      font-size: 0.85rem;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(21,69,47,0.35);
+    }
+
+    .nav-donate:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 40px rgba(21,69,47,0.45);
     }
 
     main {
-      overflow: hidden;
+      flex: 1;
     }
 
     .section {
-      max-width: 1100px;
+      max-width: var(--max-width);
       margin: 0 auto;
-      padding: 72px 22px;
+      padding: 2.75rem 1.25rem;
     }
+
+    /* HERO */
 
     .hero {
-      position: relative;
-      padding: 110px 22px 90px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2.5rem;
       align-items: center;
-      gap: 30px;
-      isolation: isolate;
+      padding-top: 3rem;
+      padding-bottom: 2rem;
     }
 
-    .hero::before,
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 480px;
-      height: 480px;
-      border-radius: 50%;
-      filter: blur(60px);
-      z-index: -1;
-      opacity: 0.6;
+    .hero-kicker {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--color-muted);
+      margin-bottom: 0.75rem;
     }
 
-    .hero::before {
-      background: radial-gradient(circle, rgba(31, 74, 50, 0.25), transparent 60%);
-      top: -180px;
-      left: -120px;
+    .hero-title {
+      font-size: clamp(2.2rem, 4vw, 2.9rem);
+      line-height: 1.05;
+      margin: 0 0 0.6rem;
+      color: var(--color-primary);
     }
 
-    .hero::after {
-      background: radial-gradient(circle, rgba(217, 164, 65, 0.18), transparent 70%);
-      bottom: -160px;
-      right: -160px;
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: var(--color-text);
+      max-width: 35rem;
+      margin-bottom: 1.4rem;
     }
 
-    .eyebrow {
+    .hero-pill {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: #fffaf2;
-      color: var(--forest);
-      padding: 8px 14px;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      padding: 0.35rem 0.7rem;
       border-radius: 999px;
-      font-weight: 600;
-      letter-spacing: 0.4px;
-      box-shadow: inset 0 0 0 1px rgba(31, 74, 50, 0.1);
+      background: rgba(200,154,61,0.1);
+      color: var(--color-muted);
+      margin-bottom: 0.4rem;
     }
 
-    h1, h2, h3 {
-      font-family: 'Playfair Display', 'Times New Roman', serif;
-      margin: 0 0 16px;
-      color: var(--forest-dark);
-      letter-spacing: 0.2px;
-    }
-
-    h1 {
-      font-size: clamp(2.4rem, 4vw, 3rem);
-    }
-
-    h2 {
-      font-size: clamp(1.8rem, 3vw, 2.2rem);
-    }
-
-    h3 {
-      font-size: 1.25rem;
-    }
-
-    p {
-      margin: 0 0 14px;
-      color: var(--muted);
-      max-width: 70ch;
+    .hero-pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--color-accent);
     }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 20px;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 12px 18px;
-      border-radius: 12px;
-      font-weight: 600;
+      border-radius: 999px;
       border: none;
       cursor: pointer;
-      transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+      padding: 0.7rem 1.4rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease, color 0.12s ease;
+      text-decoration: none;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--forest), var(--forest-dark));
-      color: var(--cream);
-      box-shadow: 0 10px 30px rgba(20, 48, 33, 0.25);
+      background: var(--color-primary);
+      color: #fdfaf4;
+      box-shadow: 0 18px 35px rgba(21,69,47,0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 24px 50px rgba(21,69,47,0.5);
     }
 
     .btn-secondary {
-      background: #fff;
-      color: var(--forest);
-      border: 1px solid rgba(31, 74, 50, 0.16);
-      box-shadow: 0 10px 30px rgba(20, 48, 33, 0.08);
+      background: var(--color-surface);
+      color: var(--color-primary);
+      border: 1px solid rgba(21,69,47,0.16);
     }
 
-    .btn:hover,
-    .btn:focus-visible {
-      transform: translateY(-2px);
-      outline: none;
+    .btn-secondary:hover {
+      background: var(--color-primary-soft);
     }
 
-    .btn-primary:hover,
-    .btn-primary:focus-visible {
-      box-shadow: 0 14px 32px rgba(20, 48, 33, 0.32);
-    }
-
-    .btn-secondary:hover,
-    .btn-secondary:focus-visible {
-      background: #fffaf2;
+    .hero-note {
+      font-size: 0.85rem;
+      color: var(--color-muted);
     }
 
     .hero-visual {
       position: relative;
-      background: #ffffff;
-      border-radius: 28px;
-      padding: 24px;
-      box-shadow:
-        0 15px 40px rgba(31, 74, 50, 0.08),
-        0 0 0 1px rgba(31, 74, 50, 0.04);
-      overflow: hidden;
     }
 
-    .hero-visual::before,
-    .hero-visual::after {
-      content: "";
-      position: absolute;
-      inset: 18px;
-      border-radius: 24px;
-      pointer-events: none;
+    .hero-card {
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: var(--shadow-soft);
+      padding: 1.5rem 1.4rem;
+      border: 1px solid rgba(21,69,47,0.08);
     }
 
-    .hero-visual::before {
-      border: 1px dashed rgba(31, 74, 50, 0.16);
-      transform: rotate(-1.4deg);
+    .hero-card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin: 0 0 0.2rem;
+      color: var(--color-primary);
     }
 
-    .hero-visual::after {
-      border: 1px dashed rgba(217, 164, 65, 0.25);
-      transform: rotate(1.8deg);
+    .hero-card-sub {
+      font-size: 0.8rem;
+      color: var(--color-muted);
+      margin-bottom: 1rem;
     }
 
-    .hero-grid {
-      display: grid;
-      gap: 10px;
-      grid-template-columns: repeat(6, 1fr);
-      grid-auto-rows: 70px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .tile {
-      border-radius: 18px;
-      padding: 14px;
-      background: linear-gradient(145deg, #fdfbf8, #f0e8dc);
-      color: var(--forest-dark);
+    .hero-taglist {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 4px;
-      box-shadow: 0 10px 24px rgba(31, 74, 50, 0.08);
-      border: 1px solid rgba(31, 74, 50, 0.05);
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.1rem;
     }
 
-    .tile strong {
-      font-family: 'Playfair Display', 'Times New Roman', serif;
-      letter-spacing: 0.2px;
+    .hero-tag {
+      font-size: 0.78rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: var(--color-primary-soft);
+      color: var(--color-primary);
     }
 
-    .tile.small { grid-column: span 2; }
-    .tile.medium { grid-column: span 3; }
-    .tile.tall { grid-column: span 2; grid-row: span 2; }
-
-    .section-lede {
-      max-width: 720px;
-      margin-bottom: 40px;
-    }
-
-    .about {
-      display: grid;
-      gap: 20px;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    .hero-badge-row {
+      display: flex;
+      justify-content: space-between;
       align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--color-muted);
     }
 
-    .about-card {
-      background: #fff;
-      padding: 24px;
-      border-radius: 18px;
-      border: 1px solid rgba(31, 74, 50, 0.08);
-      box-shadow: 0 10px 24px rgba(31, 74, 50, 0.08);
-    }
-
-    .highlights {
-      display: grid;
-      gap: 16px;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    }
-
-    .card {
-      background: #fff;
-      padding: 22px;
-      border-radius: 18px;
-      border: 1px solid rgba(31, 74, 50, 0.08);
-      box-shadow: 0 12px 28px rgba(31, 74, 50, 0.08);
-      display: grid;
-      gap: 10px;
-    }
-
-    .tag {
+    .hero-badge {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: #fdf8f0;
-      color: var(--forest);
-      padding: 8px 12px;
-      border-radius: 14px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      width: fit-content;
+      gap: 0.35rem;
+      padding: 0.3rem 0.5rem;
+      border-radius: 999px;
+      background: rgba(200,154,61,0.12);
+      color: var(--color-text);
     }
 
-    .tag .dot {
-      width: 10px;
-      height: 10px;
-      background: var(--soft-gold);
-      border-radius: 50%;
-      box-shadow: 0 0 0 6px rgba(217, 164, 65, 0.18);
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--color-accent);
     }
 
-    .donation {
-      background: linear-gradient(120deg, rgba(31, 74, 50, 0.94), rgba(20, 48, 33, 0.98));
-      color: #fff;
-      border-radius: 24px;
-      padding: 38px;
+    .hero-orb {
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #ffeec2, #15452f);
+      top: -40px;
+      right: -20px;
+      opacity: 0.35;
+      filter: blur(0.2px);
+      z-index: -1;
+    }
+
+    /* GENERIC SECTION STYLES */
+
+    .section-heading {
+      max-width: 26rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-kicker {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--color-muted);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      margin: 0 0 0.4rem;
+      color: var(--color-primary);
+    }
+
+    .section-body {
+      font-size: 0.98rem;
+      color: var(--color-text);
+      max-width: 38rem;
+    }
+
+    /* ABOUT */
+
+    .about-card {
+      border-radius: var(--radius-lg);
+      padding: 1.6rem 1.4rem;
+      background: rgba(255,255,255,0.94);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(21,69,47,0.06);
+    }
+
+    /* PROGRAMS */
+
+    .programs-grid {
       display: grid;
-      gap: 18px;
-      box-shadow: 0 16px 40px rgba(20, 48, 33, 0.28);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.5rem;
     }
 
-    .donation p {
-      color: #f5efe4;
+    .program-card {
+      border-radius: 18px;
+      padding: 1.2rem 1.1rem;
+      background: rgba(255,255,255,0.96);
+      border: 1px solid rgba(21,69,47,0.08);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.03);
     }
+
+    .program-title {
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-bottom: 0.3rem;
+    }
+
+    .program-body {
+      font-size: 0.9rem;
+      color: var(--color-text);
+    }
+
+    /* DONATION SECTION */
+
+    .donate-section {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 1.8rem;
+      align-items: center;
+    }
+
+    .donate-card {
+      border-radius: var(--radius-lg);
+      padding: 1.7rem 1.5rem;
+      background: #15452f;
+      color: #fdfaf4;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    }
+
+    .donate-card h2 {
+      margin-top: 0;
+      margin-bottom: 0.4rem;
+      font-size: 1.5rem;
+    }
+
+    .donate-card p {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .donate-note {
+      font-size: 0.8rem;
+      opacity: 0.9;
+    }
+
+    .donate-aside {
+      font-size: 0.88rem;
+      color: var(--color-muted);
+    }
+
+    /* CONTACT */
 
     .contact-grid {
       display: grid;
-      gap: 16px;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 1.7rem;
     }
 
-    .contact-item {
-      background: #fff;
-      padding: 18px;
-      border-radius: 16px;
-      border: 1px solid rgba(31, 74, 50, 0.08);
-      box-shadow: 0 10px 24px rgba(31, 74, 50, 0.08);
+    .contact-card {
+      border-radius: var(--radius-lg);
+      padding: 1.6rem 1.4rem;
+      background: rgba(255,255,255,0.96);
+      border: 1px solid rgba(21,69,47,0.08);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.06);
     }
 
-    footer {
-      background: var(--forest-dark);
-      color: #f0efe9;
-      padding: 26px 22px;
+    .contact-item-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--color-muted);
+      margin-bottom: 0.1rem;
+    }
+
+    .contact-item-value {
+      font-size: 0.95rem;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 0.75rem;
+      margin: 1rem 0;
+    }
+
+    .contact-note {
+      font-size: 0.85rem;
+      color: var(--color-muted);
+    }
+
+    /* FOOTER */
+
+    .site-footer {
+      border-top: 1px solid rgba(21,69,47,0.08);
+      padding: 1.5rem 1.25rem 2rem;
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--color-muted);
     }
 
     .footer-inner {
-      max-width: 1100px;
+      max-width: var(--max-width);
       margin: 0 auto;
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
+      gap: 0.75rem;
       justify-content: space-between;
-      gap: 12px;
-      font-size: 0.95rem;
+      align-items: center;
     }
 
     .footer-links {
       display: flex;
-      gap: 14px;
       flex-wrap: wrap;
+      gap: 0.75rem;
     }
 
     .footer-links a {
-      color: #f5efe4;
+      padding: 0.1rem 0.2rem;
+      border-radius: 999px;
     }
 
-    @media (max-width: 720px) {
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
+    .footer-links a:hover {
+      background: rgba(21,69,47,0.06);
+    }
 
-      nav ul {
-        width: 100%;
-        justify-content: space-between;
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .hero,
+      .donate-section,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
       }
 
       .hero {
-        padding-top: 90px;
+        padding-top: 2.2rem;
       }
 
-      .hero-grid {
-        grid-template-columns: repeat(4, 1fr);
+      .hero-visual {
+        order: -1;
+      }
+
+      .programs-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .nav-links {
+        display: none; /* simplest: hide nav links on very small screens */
+      }
+    }
+
+    @media (max-width: 600px) {
+      .section {
+        padding-inline: 1rem;
+      }
+
+      .site-header .nav {
+        padding-inline: 1rem;
       }
     }
   </style>
 </head>
 <body>
-  <header aria-label="Site header">
-    <div class="nav">
-      <a href="#top" class="brand">
-        <span class="leaf" aria-hidden="true"></span>
-        <span>The Garden School</span>
-      </a>
-      <nav aria-label="Primary navigation">
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#programs">Programs</a></li>
-          <li><a href="#donate">Donate</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+  <div class="page">
+    <header class="site-header">
+      <nav class="nav" aria-label="Main navigation">
+        <div class="nav-left">
+          <div class="brand-mark" aria-hidden="true">
+            <span>G</span>
+          </div>
+          <div class="brand-text">
+            <span class="title">The Garden School</span>
+            <span class="subtitle">A program of The Garden Collective</span>
+          </div>
+        </div>
+       <div class="nav-links">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="programs.html">Programs</a>
+  <a href="donate.html">Donate</a>
+  <a href="contact.html">Contact</a>
+  <a class="nav-donate" href="donate.html">Give Today</a>
+</div>
+
       </nav>
-    </div>
-  </header>
+    </header>
 
-  <main id="top">
-    <section class="section hero" aria-labelledby="hero-title">
-      <div>
-        <div class="eyebrow">The Garden Collective · Hamden, CT</div>
-        <h1 id="hero-title">The Garden School</h1>
-        <p>GED education and community support for at-risk and post-detention youth. We cultivate belonging, purpose, and practical skills so young people can grow with confidence.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#donate">Donate</a>
-          <a class="btn btn-secondary" href="#contact">Enroll / Learn More</a>
-        </div>
-      </div>
-      <div class="hero-visual" aria-hidden="true">
-        <div class="hero-grid">
-          <div class="tile small"><strong>GED prep</strong><span>Small-group instruction</span></div>
-          <div class="tile medium"><strong>Mentorship</strong><span>Caring adults & peers</span></div>
-          <div class="tile tall"><strong>Creative studio</strong><span>Art, media, and design pathways</span></div>
-          <div class="tile small"><strong>Life skills</strong><span>Financial literacy & wellness</span></div>
-          <div class="tile medium"><strong>Vocational bridges</strong><span>Trades exposure and job readiness</span></div>
-          <div class="tile small"><strong>Community meals</strong><span>Shared tables, shared stories</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="section" aria-labelledby="about-title">
-      <div class="section-lede">
-        <h2 id="about-title">Rooted in care, growing toward opportunity</h2>
-        <p>The Garden School is an educational program of The Garden Collective, a 501(c)(3) nonprofit in Hamden, Connecticut. We walk alongside youth navigating instability, court involvement, and reentry—pairing GED instruction with the mentorship and belonging every young person deserves.</p>
-      </div>
-      <div class="about">
-        <div class="about-card">
-          <h3>Holistic approach</h3>
-          <p>Academic support meets social-emotional learning, creative expression, and practical life skills. We respond to the whole person.</p>
-        </div>
-        <div class="about-card">
-          <h3>Small by design</h3>
-          <p>Intentionally intimate cohorts mean every student is seen, known, and supported with personalized plans.</p>
-        </div>
-        <div class="about-card">
-          <h3>Community partnerships</h3>
-          <p>Local mentors, artists, counselors, and tradespeople walk with our students, opening doors to possibilities.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="programs" class="section" aria-labelledby="program-title">
-      <div class="section-lede">
-        <h2 id="program-title">Program Highlights</h2>
-        <p>Clear pathways to graduation, healing, and future-ready skills.</p>
-      </div>
-      <div class="highlights">
-        <article class="card">
-          <div class="tag"><span class="dot" aria-hidden="true"></span><span>GED Instruction</span></div>
-          <h3>GED Instruction</h3>
-          <p>Certified educators deliver individualized lessons, practice testing, and wraparound academic coaching.</p>
-        </article>
-        <article class="card">
-          <div class="tag"><span class="dot" aria-hidden="true"></span><span>Community & Mentorship</span></div>
-          <h3>Community & Mentorship</h3>
-          <p>Consistent mentors, restorative circles, and family-style meals to build trust, resilience, and belonging.</p>
-        </article>
-        <article class="card">
-          <div class="tag"><span class="dot" aria-hidden="true"></span><span>Creative & Vocational Skills</span></div>
-          <h3>Creative & Vocational Skills</h3>
-          <p>Hands-on workshops in art, media, culinary, and trades to spark curiosity and connect learning to livelihood.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="donate" class="section" aria-labelledby="donate-title">
-      <div class="donation">
+       <main>
+      <!-- HERO -->
+      <section class="section hero" aria-labelledby="hero-title">
         <div>
-          <h2 id="donate-title" style="color: #fff;">Support the Garden</h2>
-          <p>The Garden Collective is a 501(c)(3) nonprofit. Your gift funds instruction, transportation, meals, art supplies, and the welcoming environment that keeps our students rooted.</p>
+          <div class="hero-kicker">Hamden, Connecticut</div>
+          <h1 id="hero-title" class="hero-title">The Garden School</h1>
+          <p class="hero-subtitle">
+            GED education, creative skill-building, and community support for youth navigating instability, reentry, or school disengagement.
+          </p>
+          <div class="hero-pill">
+            <span class="hero-pill-dot"></span>
+            A free, community-supported program of The Garden Collective (501(c)(3))
+          </div>
+          <div class="hero-actions">
+            <!-- Replace # with your actual donation URL when you have it -->
+            <a href="donate.html" class="btn btn-primary">Donate</a>
+            <a href="contact.html" class="btn btn-secondary">Enroll / Learn More</a>
+          </div>
+          <p class="hero-note">
+            We meet students where they are: at the pace their lives and nervous systems can actually hold.
+          </p>
         </div>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#contact">Donate Now</a>
-          <a class="btn btn-secondary" href="#contact">Request donation receipt</a>
-        </div>
-      </div>
-    </section>
 
-    <section id="contact" class="section" aria-labelledby="contact-title">
-      <div class="section-lede">
-        <h2 id="contact-title">Connect with us</h2>
-        <p>We welcome prospective students, partners, volunteers, and donors. Reach out and we will respond quickly.</p>
-      </div>
-      <div class="contact-grid">
-        <div class="contact-item">
-          <h3>Location</h3>
-          <p>Hamden, Connecticut</p>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-card">
+            <h2 class="hero-card-title">A home-based learning space</h2>
+            <p class="hero-card-sub">
+              Weekly dinners, meditation, GED prep, and creative workshops — all under one roof.
+            </p>
+            <div class="hero-taglist">
+              <div class="hero-tag">Free GED support</div>
+              <div class="hero-tag">Trauma-aware teaching</div>
+              <div class="hero-tag">Small groups</div>
+              <div class="hero-tag">Creative practice</div>
+              <div class="hero-tag">Youth mentorship</div>
+            </div>
+            <div class="hero-badge-row">
+              <div class="hero-badge">
+                <span class="hero-badge-dot"></span>
+                501(c)(3) &mdash; donations are tax-deductible
+              </div>
+              <span>Hamden, CT</span>
+            </div>
+          </div>
+          <div class="hero-orb"></div>
         </div>
-        <div class="contact-item">
-          <h3>Email</h3>
-          <p><a href="mailto:hello@thegardencollective.org">hello@thegardencollective.org</a></p>
-        </div>
-        <div class="contact-item">
-          <h3>Interest form</h3>
-          <p><a href="https://forms.gle/your-interest-form" target="_blank" rel="noreferrer noopener">Share your interest</a></p>
-        </div>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <footer aria-label="Site footer">
-    <div class="footer-inner">
-      <div>© <span aria-label="year">2024</span> The Garden Collective · 501(c)(3)</div>
-      <div class="footer-links">
-        <a href="#about">About</a>
-        <a href="#programs">Programs</a>
-        <a href="#donate">Donate</a>
-        <a href="#contact">Contact</a>
+      <!-- EXPLORE TEASER -->
+      <section class="section">
+        <div class="section-heading">
+          <div class="section-kicker">Explore</div>
+          <h2 class="section-title">Learn more about The Garden School.</h2>
+          <p class="section-body">
+            Visit the pages below to go deeper into our model, programs, and ways to support our work.
+          </p>
+        </div>
+        <div class="programs-grid">
+          <article class="program-card">
+            <h3 class="program-title"><a href="about.html">About</a></h3>
+            <p class="program-body">
+              Read about our mission, trauma-aware approach, and how The Garden School fits within The Garden Collective.
+            </p>
+          </article>
+          <article class="program-card">
+            <h3 class="program-title"><a href="programs.html">Programs</a></h3>
+            <p class="program-body">
+              See how GED instruction, community dinners, meditation, and creative workshops fit together.
+            </p>
+          </article>
+          <article class="program-card">
+            <h3 class="program-title"><a href="donate.html">Donate</a></h3>
+            <p class="program-body">
+              Learn how your support keeps classes free and tables full.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>
+          © <span id="year"></span> The Garden Collective, 501(c)(3). All rights reserved.
+          <br />
+          The Garden School is a free, community-supported education program serving youth in Greater New Haven.
+        </div>
+        <div class="footer-links">
+          <!-- Replace with real social links when you have them -->
+          <a href="#">Instagram</a>
+          <a href="#">Newsletter</a>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
+
+  <script>
+    // Set current year in footer automatically
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
