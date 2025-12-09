@@ -9,11 +9,11 @@
     content="GED education, creative skill-building, and community support for youth navigating instability, reentry, or school disengagement."
   />
 
-  <!-- Optional: Google Font similar to the Base44 look -->
+  <!-- Font similar to the Base44 style -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap"
     rel="stylesheet"
   >
 
@@ -22,11 +22,15 @@
       --green: #33452f;
       --green-dark: #223121;
       --cream-bg: #f6eee0;
-      --cream-fade-top: rgba(246, 238, 224, 0.96);
-      --cream-fade-bottom: rgba(246, 238, 224, 0.98);
-      --border-soft: rgba(255, 255, 255, 0.8);
-      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.18);
+      --card-bg: #fbf6ec;
+      --border-soft: rgba(221, 210, 192, 0.9);
+      --white-soft: rgba(248, 244, 236, 0.96);
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.16);
+      --radius-card: 24px;
       --radius-pill: 999px;
+      --text-muted: #616b5f;
+      --text-soft: #7b8578;
+      --max-width: 1040px;
     }
 
     * {
@@ -43,48 +47,92 @@
       background-color: var(--cream-bg);
     }
 
-    .hero-page {
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ========== LAYOUT WRAPPER ========== */
+
+    .page {
       min-height: 100vh;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 3rem 1.5rem;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .section {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem;
+    }
+
+    .section-heading {
+      max-width: 32rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .section-kicker {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-soft);
+      margin-bottom: 0.45rem;
+    }
+
+    .section-title {
+      font-size: 1.75rem;
+      margin-bottom: 0.7rem;
+      color: var(--green-dark);
+    }
+
+    .section-body {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ========== HERO ========== */
+
+    .hero-page {
       position: relative;
       overflow: hidden;
       isolation: isolate;
-      text-align: center;
+      padding: 3.5rem 1.5rem 4.5rem;
     }
 
-    /* Blurred garden background */
-    .hero-page::before {
-      content: "";
-      position: absolute;
+    .hero-bg {
+      position: fixed;
       inset: 0;
-      /* TODO: change this path to your real image file */
-      background-image: url("images/garden-hero.jpg");
+      z-index: -2;
+      background-image: url("images/garden-hero.jpg"); /* TODO: change this to your real image path */
       background-size: cover;
       background-position: center;
       filter: blur(6px);
       transform: scale(1.06);
-      z-index: -2;
     }
 
-    /* Warm cream overlay */
-    .hero-page::after {
-      content: "";
+    .hero-overlay {
       position: absolute;
       inset: 0;
       background: linear-gradient(
         to bottom,
-        var(--cream-fade-top),
-        var(--cream-fade-bottom)
+        rgba(246, 238, 224, 0.98),
+        rgba(246, 238, 224, 0.97),
+        rgba(246, 238, 224, 0.98)
       );
       z-index: -1;
     }
 
     .hero-inner {
-      max-width: 780px;
+      max-width: 860px;
       margin: 0 auto;
+      text-align: center;
+      padding-top: 3rem;
+      padding-bottom: 3.5rem;
     }
 
     .hero-pill {
@@ -93,29 +141,29 @@
       justify-content: center;
       padding: 0.55rem 1.9rem;
       border-radius: var(--radius-pill);
-      background: rgba(245, 241, 234, 0.92);
-      border: 1px solid var(--border-soft);
+      background: rgba(245, 241, 234, 0.96);
+      border: 1px solid rgba(255, 255, 255, 0.9);
       box-shadow: 0 10px 28px rgba(0, 0, 0, 0.09);
       font-size: 0.86rem;
       color: #4b5845;
-      margin-bottom: 2.1rem;
+      margin-bottom: 2.2rem;
     }
 
     .hero-title {
-      font-size: clamp(2.9rem, 6vw, 4rem);
+      font-size: clamp(3rem, 7vw, 4.2rem);
       font-weight: 500;
-      letter-spacing: 0.03em;
-      line-height: 1.03;
+      letter-spacing: 0.04em;
+      line-height: 1.02;
       margin-bottom: 1.3rem;
-      color: #283521;
+      color: #273521;
     }
 
     .hero-subtitle {
-      font-size: 1.05rem;
+      font-size: 1.07rem;
       line-height: 1.65;
-      max-width: 40rem;
-      margin: 0 auto 2.6rem;
-      color: #435040;
+      max-width: 42rem;
+      margin: 0 auto 2.7rem;
+      color: #404d3e;
     }
 
     .hero-actions {
@@ -131,7 +179,7 @@
       align-items: center;
       justify-content: center;
       gap: 0.55rem;
-      padding: 0.9rem 2.25rem;
+      padding: 0.9rem 2.4rem;
       border-radius: var(--radius-pill);
       font-size: 0.97rem;
       font-weight: 500;
@@ -156,9 +204,9 @@
     }
 
     .btn-secondary {
-      background: rgba(247, 244, 238, 0.85);
+      background: rgba(248, 244, 237, 0.9);
       color: var(--green-dark);
-      border-color: rgba(51, 69, 48, 0.4);
+      border-color: rgba(51, 69, 48, 0.45);
     }
 
     .btn-secondary:hover {
@@ -166,7 +214,6 @@
       transform: translateY(-1px);
     }
 
-    /* small circular heart icon inside the Donate button */
     .btn-icon-circle {
       width: 1.1rem;
       height: 1.1rem;
@@ -182,7 +229,206 @@
       transform: translateY(-0.5px);
     }
 
+    /* ========== ABOUT SECTION ========== */
+
+    .about-card {
+      background: var(--white-soft);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border-soft);
+      padding: 1.9rem 1.8rem;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.06);
+    }
+
+    .about-card p + p {
+      margin-top: 1.2rem;
+    }
+
+    /* ========== PROGRAMS SECTION ========== */
+
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    .program-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      border: 1px solid var(--border-soft);
+      padding: 1.4rem 1.3rem;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+    }
+
+    .program-title {
+      font-size: 1.02rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: var(--green-dark);
+    }
+
+    .program-body {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ========== SUPPORT / DONATE SECTION ========== */
+
+    .support-section {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 1.9rem;
+      align-items: flex-start;
+    }
+
+    .support-card {
+      background: var(--green);
+      color: #fdfaf4;
+      border-radius: var(--radius-card);
+      padding: 1.9rem 1.8rem;
+      box-shadow: 0 22px 48px rgba(0, 0, 0, 0.35);
+    }
+
+    .support-card h2 {
+      font-size: 1.55rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .support-card p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .support-card p + p {
+      margin-top: 0.9rem;
+    }
+
+    .support-card .btn-primary {
+      margin-top: 1.3rem;
+      background: #fdfaf4;
+      color: var(--green-dark);
+      box-shadow: none;
+      border-color: transparent;
+    }
+
+    .support-card .btn-primary:hover {
+      background: #f5ebd6;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+    }
+
+    .support-note {
+      font-size: 0.82rem;
+      opacity: 0.92;
+      margin-top: 0.8rem;
+    }
+
+    .support-list {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .support-list ul {
+      margin-top: 0.6rem;
+      padding-left: 1.1rem;
+    }
+
+    .support-list li + li {
+      margin-top: 0.25rem;
+    }
+
+    /* ========== CONTACT SECTION ========== */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 1.9rem;
+      align-items: flex-start;
+    }
+
+    .contact-card {
+      background: var(--white-soft);
+      border-radius: var(--radius-card);
+      padding: 1.7rem 1.6rem;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 0.9rem;
+      margin-bottom: 1.1rem;
+    }
+
+    .contact-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+      margin-bottom: 0.1rem;
+    }
+
+    .contact-value {
+      font-size: 0.96rem;
+      color: var(--green-dark);
+    }
+
+    .contact-note {
+      font-size: 0.86rem;
+      color: var(--text-soft);
+      line-height: 1.7;
+    }
+
+    /* ========== FOOTER ========== */
+
+    .site-footer {
+      border-top: 1px solid rgba(201, 190, 173, 0.9);
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      padding: 1.5rem 1.5rem 2rem;
+      background: rgba(246, 238, 224, 0.98);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.9rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .footer-links a {
+      padding: 0.1rem 0.3rem;
+      border-radius: 999px;
+    }
+
+    .footer-links a:hover {
+      background: rgba(226, 214, 196, 0.9);
+    }
+
+    /* ========== RESPONSIVE ========== */
+
+    @media (max-width: 900px) {
+      .programs-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .support-section,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
     @media (max-width: 600px) {
+      .section,
       .hero-page {
         padding-inline: 1.1rem;
       }
@@ -199,32 +445,234 @@
   </style>
 </head>
 <body>
-  <main class="hero-page">
-    <div class="hero-inner">
-      <div class="hero-pill">Part of The Garden Collective</div>
+  <div class="page">
+    <!-- HERO -->
+    <header class="hero-page">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
 
-      <h1 class="hero-title">The Garden School</h1>
+      <div class="hero-inner">
+        <div class="hero-pill">Part of The Garden Collective</div>
 
-      <p class="hero-subtitle">
-        GED education, creative skill-building, and community support for youth
-        navigating instability, reentry, or school disengagement.
-      </p>
+        <h1 class="hero-title">The Garden School</h1>
 
-      <div class="hero-actions">
-        <!-- TODO: change href to your real donation link or donate.html -->
-        <a href="donate.html" class="btn btn-primary">
-          <span class="btn-icon-circle" aria-hidden="true">
-            <span>♡</span>
-          </span>
-          <span>Donate</span>
-        </a>
+        <p class="hero-subtitle">
+          GED education, creative skill-building, and community support for
+          youth navigating instability, reentry, or school disengagement.
+        </p>
 
-        <!-- TODO: change href to your enroll/contact page or external form -->
-        <a href="contact.html" class="btn btn-secondary">
-          Enroll / Learn More
-        </a>
+        <div class="hero-actions">
+          <!-- TODO: change href to your real donation link or donate.html -->
+          <a href="donate.html" class="btn btn-primary">
+            <span class="btn-icon-circle" aria-hidden="true">
+              <span>♡</span>
+            </span>
+            <span>Donate</span>
+          </a>
+
+          <!-- TODO: change href to your enroll/contact page or external form -->
+          <a href="#contact" class="btn btn-secondary">
+            Enroll / Learn More
+          </a>
+        </div>
       </div>
-    </div>
-  </main>
+    </header>
+
+    <main>
+      <!-- ABOUT -->
+      <section class="section" aria-labelledby="about-heading">
+        <div class="section-heading">
+          <div class="section-kicker">About</div>
+          <h2 id="about-heading" class="section-title">About The Garden School</h2>
+          <p class="section-body">
+            The Garden School is an initiative of The Garden Collective, a 501(c)(3)
+            based in Hamden, Connecticut. We offer accessible GED instruction,
+            mentorship, meditation, weekly community dinners, and creative
+            workshops for youth navigating instability, reentry, or school
+            disengagement.
+          </p>
+        </div>
+
+        <div class="about-card">
+          <p>
+            Our model is home-based, relational, and trauma-aware. We believe
+            education becomes possible when young people feel safe, welcomed,
+            supported, and seen. Learning happens in community — around tables,
+            in conversation, and through the creative and practical skills that
+            build confidence and autonomy.
+          </p>
+          <p>
+            We meet students where they are, pacing our teaching to real lives
+            and nervous systems instead of forcing them to fit inflexible
+            institutional schedules. The Garden School lives inside a larger
+            ecosystem of dinners, residencies, and workshops at The Garden
+            Collective, where learning, art, and rest are treated as shared
+            responsibilities.
+          </p>
+        </div>
+      </section>
+
+      <!-- PROGRAMS -->
+      <section class="section" aria-labelledby="programs-heading">
+        <div class="section-heading">
+          <div class="section-kicker">Programs</div>
+          <h2 id="programs-heading" class="section-title">What We Offer</h2>
+          <p class="section-body">
+            Our programming weaves together academic support, nervous system
+            regulation, and hands-on creative practice. Students can move between
+            offerings depending on what they need most in a given season.
+          </p>
+        </div>
+
+        <div class="programs-grid">
+          <article class="program-card">
+            <h3 class="program-title">GED Instruction</h3>
+            <p class="program-body">
+              Small-group and one-on-one learning, paced to each student’s needs.
+              We focus on building confidence, reducing school-related anxiety,
+              and supporting long-term academic and career goals.
+            </p>
+          </article>
+
+          <article class="program-card">
+            <h3 class="program-title">Community &amp; Mentorship</h3>
+            <p class="program-body">
+              Weekly dinners, meditation sessions taught by community leaders,
+              and ongoing relational support. We create a consistent, grounding
+              space where students can breathe, reset, and reconnect.
+            </p>
+          </article>
+
+          <article class="program-card">
+            <h3 class="program-title">Creative &amp; Vocational Skills</h3>
+            <p class="program-body">
+              Workshops in cooking, sewing, carpentry, art-making, and other
+              rotating skills taught by local artists and mentors. Students learn
+              practical abilities while discovering new interests and strengths.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- SUPPORT / DONATE -->
+      <section class="section" aria-labelledby="support-heading">
+        <div class="section-heading">
+          <div class="section-kicker">Support our work</div>
+          <h2 id="support-heading" class="section-title">Keep our tables full and our doors open.</h2>
+        </div>
+
+        <div class="support-section">
+          <div class="support-card">
+            <h2>Support The Garden School</h2>
+            <p>
+              The Garden School operates entirely through community support.
+              Donations keep our classes free, fund workshop materials, provide
+              meals, and help us expand our reach to more young people who need
+              a soft place to land.
+            </p>
+            <p>
+              We are a registered <strong>501(c)(3)</strong>, and all contributions
+              are tax-deductible.
+            </p>
+            <!-- TODO: real donation link -->
+            <a href="donate.html" class="btn btn-primary">
+              <span>Donate</span>
+            </a>
+            <p class="support-note">
+              Not in a position to give financially? Reach out about volunteering,
+              hosting a workshop, or sponsoring supplies.
+            </p>
+          </div>
+
+          <div class="support-list">
+            <p>Your support directly covers things like:</p>
+            <ul>
+              <li>Books, test fees, and tutoring time.</li>
+              <li>Groceries for weekly community dinners.</li>
+              <li>Art, sewing, and carpentry materials.</li>
+              <li>Stipends for community educators and mentors.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section" aria-labelledby="contact-heading">
+        <div class="section-heading">
+          <div class="section-kicker">Contact</div>
+          <h2 id="contact-heading" class="section-title">
+            Enroll, refer a student, or get involved.
+          </h2>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-list">
+              <div>
+                <div class="contact-label">Location</div>
+                <div class="contact-value">Hamden, Connecticut</div>
+              </div>
+              <div>
+                <div class="contact-label">Email</div>
+                <!-- TODO: real email -->
+                <div class="contact-value">
+                  <a href="mailto:info@gardencollective.org">info@gardencollective.org</a>
+                </div>
+              </div>
+              <div>
+                <div class="contact-label">Interest Form</div>
+                <!-- TODO: real form link -->
+                <div class="contact-value">
+                  <a href="#" target="_blank" rel="noopener noreferrer">
+                    Complete our student / supporter interest form
+                  </a>
+                </div>
+              </div>
+            </div>
+            <p class="contact-note">
+              We currently teach from our home-based headquarters and community
+              spaces in the Greater New Haven area. Exact addresses are shared
+              with students and visitors once they’re connected with our team.
+            </p>
+          </div>
+
+          <div>
+            <p class="section-body">
+              Whether you’re a young person looking for GED support, a caregiver
+              or caseworker making a referral, or a neighbor who wants to help,
+              we’d love to hear from you.
+            </p>
+            <p class="section-body" style="margin-top:0.9rem;">
+              Tell us a little about what you’re hoping for, and we’ll follow up
+              with next steps, current schedule options, and ways to plug into
+              the wider Garden Collective community.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>
+          © <span id="year"></span> The Garden Collective, 501(c)(3). All rights reserved.
+          <br />
+          The Garden School is a free, community-supported education program
+          serving youth in Greater New Haven.
+        </div>
+        <div class="footer-links">
+          <!-- TODO: real socials / newsletter links -->
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">Newsletter</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
