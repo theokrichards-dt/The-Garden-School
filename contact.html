@@ -1,35 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Garden School | The Garden Collective</title>
+  <meta charset="UTF-8" />
+  <title>Contact | The Garden School</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Get in touch with The Garden School. Learn about enrollment, volunteering, donating, or partnering with our community-based GED and youth support programs."
+  />
+
+  <!-- Same font as the other pages -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  >
+
   <style>
     :root {
-      --forest: #1f4a32;
-      --forest-dark: #143021;
-      --cream: #f6f1e9;
-      --soft-gold: #d9a441;
-      --stone: #e2d7c8;
-      --text: #2d2a26;
-      --muted: #5d584f;
-      color-scheme: light;
+      --green: #33452f;
+      --green-dark: #223121;
+      --cream-bg: #f6eee0;
+      --card-bg: #fbf6ec;
+      --white-soft: rgba(248, 244, 236, 0.98);
+      --border-soft: rgba(221, 210, 192, 0.9);
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.16);
+      --radius-card-xl: 32px;
+      --radius-card: 22px;
+      --radius-pill: 999px;
+      --text-muted: #646f62;
+      --text-soft: #7f887a;
+      --max-width: 960px;
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
-      font-family: 'Work Sans', 'Segoe UI', system-ui, -apple-system, sans-serif;
-      background: var(--cream);
-      color: var(--text);
-      line-height: 1.7;
       min-height: 100vh;
+      font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      color: var(--green-dark);
+      background-color: var(--cream-bg);
     }
 
     a {
@@ -37,478 +53,604 @@
       text-decoration: none;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(246, 241, 233, 0.9);
-      backdrop-filter: blur(6px);
-      border-bottom: 1px solid rgba(31, 74, 50, 0.08);
-    }
-
-    .nav {
+    .page {
+      min-height: 100vh;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 16px 22px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 600;
-      letter-spacing: 0.3px;
-      color: var(--forest-dark);
-    }
-
-    .leaf {
-      width: 14px;
-      height: 24px;
-      background: linear-gradient(140deg, var(--soft-gold), var(--forest));
-      border-radius: 12px 12px 4px 12px;
-      transform: rotate(-12deg);
-      box-shadow: 0 6px 12px rgba(31, 74, 50, 0.18);
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 18px;
-      padding: 0;
-      margin: 0;
-      font-weight: 500;
-    }
-
-    nav a {
-      padding: 8px 10px;
-      border-radius: 10px;
-      transition: background 0.2s ease, color 0.2s ease;
-    }
-
-    nav a:focus-visible,
-    nav a:hover {
-      background: var(--forest);
-      color: var(--cream);
-      outline: none;
+      flex-direction: column;
     }
 
     main {
-      overflow: hidden;
+      flex: 1;
     }
 
     .section {
-      max-width: 1100px;
+      max-width: var(--max-width);
       margin: 0 auto;
-      padding: 72px 22px;
+      padding: 3rem 1.5rem;
     }
 
-    .hero {
-      position: relative;
-      padding: 110px 22px 90px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      align-items: center;
-      gap: 30px;
-      isolation: isolate;
+    .section-heading {
+      max-width: 32rem;
+      margin-bottom: 1.75rem;
     }
 
-    .hero::before,
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 480px;
-      height: 480px;
-      border-radius: 50%;
-      filter: blur(60px);
-      z-index: -1;
-      opacity: 0.6;
+    .section-kicker {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-soft);
+      margin-bottom: 0.45rem;
     }
 
-    .hero::before {
-      background: radial-gradient(circle, rgba(31, 74, 50, 0.25), transparent 60%);
-      top: -180px;
-      left: -120px;
+    .section-title {
+      font-size: 1.75rem;
+      margin-bottom: 0.7rem;
+      color: var(--green-dark);
     }
 
-    .hero::after {
-      background: radial-gradient(circle, rgba(217, 164, 65, 0.18), transparent 70%);
-      bottom: -160px;
-      right: -160px;
+    .section-body {
+      font-size: 0.97rem;
+      color: var(--text-muted);
+      line-height: 1.7;
     }
 
-    .eyebrow {
+    /* Top link back home */
+
+    .top-link {
+      max-width: var(--max-width);
+      margin: 1.5rem auto 0;
+      padding: 0 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text-soft);
+    }
+
+    .top-link a {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: #fffaf2;
-      color: var(--forest);
-      padding: 8px 14px;
+      gap: 0.3rem;
+      padding: 0.2rem 0.5rem;
       border-radius: 999px;
-      font-weight: 600;
-      letter-spacing: 0.4px;
-      box-shadow: inset 0 0 0 1px rgba(31, 74, 50, 0.1);
     }
 
-    h1, h2, h3 {
-      font-family: 'Playfair Display', 'Times New Roman', serif;
-      margin: 0 0 16px;
-      color: var(--forest-dark);
-      letter-spacing: 0.2px;
+    .top-link a:hover {
+      background: rgba(230, 218, 201, 0.8);
     }
 
-    h1 {
-      font-size: clamp(2.4rem, 4vw, 3rem);
+    /* HERO */
+
+    .contact-hero {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 3.2rem 1.5rem 2rem;
+      text-align: center;
     }
 
-    h2 {
-      font-size: clamp(1.8rem, 3vw, 2.2rem);
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.55rem 1.9rem;
+      border-radius: var(--radius-pill);
+      background: rgba(245, 241, 234, 0.96);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.09);
+      font-size: 0.86rem;
+      color: #4b5845;
+      margin-bottom: 1.9rem;
     }
 
-    h3 {
-      font-size: 1.25rem;
+    .contact-hero-title {
+      font-size: 2.4rem;
+      margin-bottom: 0.8rem;
     }
 
-    p {
-      margin: 0 0 14px;
-      color: var(--muted);
-      max-width: 70ch;
+    .contact-hero-subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 34rem;
+      margin: 0 auto;
+      line-height: 1.7;
     }
 
-    .hero-actions {
+    /* CONTACT CARDS */
+
+    .contact-cards {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 1rem 1.5rem 0.5rem;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 1.6rem;
+    }
+
+    .contact-card {
+      background: var(--white-soft);
+      border-radius: var(--radius-card-xl);
+      border: 1px solid var(--border-soft);
+      box-shadow: var(--shadow-soft);
+      padding: 1.8rem 1.6rem;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 1.2rem;
+      align-items: center;
+    }
+
+    .contact-card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(234, 226, 210, 0.9);
+      border: 1px solid rgba(201, 190, 173, 0.9);
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 20px;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: var(--green-dark);
+    }
+
+    .contact-card-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+
+    .contact-card-main {
+      font-size: 0.96rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .contact-card-note {
+      font-size: 0.86rem;
+      color: var(--text-soft);
+    }
+
+    /* FORM SECTION */
+
+    .form-section .section-heading {
+      margin-bottom: 1rem;
+    }
+
+    .response-note {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      margin-bottom: 1.3rem;
+    }
+
+    form {
+      background: var(--white-soft);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border-soft);
+      padding: 1.7rem 1.6rem 1.9rem;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+      display: grid;
+      gap: 1.1rem;
+    }
+
+    .form-row {
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    label {
+      font-size: 0.86rem;
+      font-weight: 500;
+      color: var(--green-dark);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    label span.required {
+      color: #b7503c;
+      font-weight: 600;
+      font-size: 0.8rem;
+      margin-left: 0.35rem;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid rgba(200, 188, 170, 0.9);
+      padding: 0.7rem 0.85rem;
+      font-size: 0.92rem;
+      font-family: inherit;
+      color: var(--green-dark);
+      background: #fdf8f0;
+      transition: border-color 0.12s ease, box-shadow 0.12s ease,
+        background-color 0.12s ease;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #a59a8a;
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #8a7b64;
+      box-shadow: 0 0 0 1px rgba(138, 123, 100, 0.45);
+      background: #fffaf2;
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .form-grid-two {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 1rem;
+    }
+
+    .form-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-top: 0.5rem;
+      font-size: 0.82rem;
+      color: var(--text-soft);
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 12px 18px;
-      border-radius: 12px;
-      font-weight: 600;
-      border: none;
+      gap: 0.4rem;
+      padding: 0.75rem 1.8rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.9rem;
+      font-weight: 500;
+      border: 1px solid transparent;
       cursor: pointer;
-      transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: transform 0.12s ease, box-shadow 0.12s ease,
+        background-color 0.12s ease, color 0.12s ease, border-color 0.12s ease;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--forest), var(--forest-dark));
-      color: var(--cream);
-      box-shadow: 0 10px 30px rgba(20, 48, 33, 0.25);
+      background: var(--green);
+      color: #fdfaf4;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.2);
     }
 
-    .btn-secondary {
-      background: #fff;
-      color: var(--forest);
-      border: 1px solid rgba(31, 74, 50, 0.16);
-      box-shadow: 0 10px 30px rgba(20, 48, 33, 0.08);
+    .btn-primary:hover {
+      background: var(--green-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
     }
 
-    .btn:hover,
-    .btn:focus-visible {
-      transform: translateY(-2px);
-      outline: none;
-    }
+    /* CONNECT + RESOURCES */
 
-    .btn-primary:hover,
-    .btn-primary:focus-visible {
-      box-shadow: 0 14px 32px rgba(20, 48, 33, 0.32);
-    }
-
-    .btn-secondary:hover,
-    .btn-secondary:focus-visible {
-      background: #fffaf2;
-    }
-
-    .hero-visual {
-      position: relative;
-      background: #ffffff;
-      border-radius: 28px;
-      padding: 24px;
-      box-shadow:
-        0 15px 40px rgba(31, 74, 50, 0.08),
-        0 0 0 1px rgba(31, 74, 50, 0.04);
-      overflow: hidden;
-    }
-
-    .hero-visual::before,
-    .hero-visual::after {
-      content: "";
-      position: absolute;
-      inset: 18px;
-      border-radius: 24px;
-      pointer-events: none;
-    }
-
-    .hero-visual::before {
-      border: 1px dashed rgba(31, 74, 50, 0.16);
-      transform: rotate(-1.4deg);
-    }
-
-    .hero-visual::after {
-      border: 1px dashed rgba(217, 164, 65, 0.25);
-      transform: rotate(1.8deg);
-    }
-
-    .hero-grid {
+    .connect-section {
       display: grid;
-      gap: 10px;
-      grid-template-columns: repeat(6, 1fr);
-      grid-auto-rows: 70px;
-      position: relative;
-      z-index: 1;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.8rem;
+      align-items: flex-start;
     }
 
-    .tile {
-      border-radius: 18px;
-      padding: 14px;
-      background: linear-gradient(145deg, #fdfbf8, #f0e8dc);
-      color: var(--forest-dark);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 4px;
-      box-shadow: 0 10px 24px rgba(31, 74, 50, 0.08);
-      border: 1px solid rgba(31, 74, 50, 0.05);
+    .connect-body p + p {
+      margin-top: 0.8rem;
     }
 
-    .tile strong {
-      font-family: 'Playfair Display', 'Times New Roman', serif;
-      letter-spacing: 0.2px;
-    }
-
-    .tile.small { grid-column: span 2; }
-    .tile.medium { grid-column: span 3; }
-    .tile.tall { grid-column: span 2; grid-row: span 2; }
-
-    .section-lede {
-      max-width: 720px;
-      margin-bottom: 40px;
-    }
-
-    .about {
-      display: grid;
-      gap: 20px;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      align-items: center;
-    }
-
-    .about-card {
-      background: #fff;
-      padding: 24px;
-      border-radius: 18px;
-      border: 1px solid rgba(31, 74, 50, 0.08);
-      box-shadow: 0 10px 24px rgba(31, 74, 50, 0.08);
-    }
-
-    .highlights {
-      display: grid;
-      gap: 16px;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    }
-
-    .card {
-      background: #fff;
-      padding: 22px;
-      border-radius: 18px;
-      border: 1px solid rgba(31, 74, 50, 0.08);
-      box-shadow: 0 12px 28px rgba(31, 74, 50, 0.08);
-      display: grid;
-      gap: 10px;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #fdf8f0;
-      color: var(--forest);
-      padding: 8px 12px;
-      border-radius: 14px;
-      font-weight: 600;
+    .resources-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border-soft);
+      padding: 1.6rem 1.5rem;
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.05);
       font-size: 0.95rem;
-      width: fit-content;
+      color: var(--text-muted);
     }
 
-    .tag .dot {
-      width: 10px;
-      height: 10px;
-      background: var(--soft-gold);
-      border-radius: 50%;
-      box-shadow: 0 0 0 6px rgba(217, 164, 65, 0.18);
+    .resources-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.6rem;
+      color: var(--green-dark);
     }
 
-    .donation {
-      background: linear-gradient(120deg, rgba(31, 74, 50, 0.94), rgba(20, 48, 33, 0.98));
-      color: #fff;
-      border-radius: 24px;
-      padding: 38px;
-      display: grid;
-      gap: 18px;
-      box-shadow: 0 16px 40px rgba(20, 48, 33, 0.28);
-      border: 1px solid rgba(255, 255, 255, 0.08);
+    .resource-item + .resource-item {
+      margin-top: 0.9rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid rgba(215, 204, 187, 0.8);
     }
 
-    .donation p {
-      color: #f5efe4;
+    .resource-label {
+      font-weight: 500;
+      color: var(--green-dark);
+      margin-bottom: 0.15rem;
     }
 
-    .contact-grid {
-      display: grid;
-      gap: 16px;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    .resource-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
     }
 
-    .contact-item {
-      background: #fff;
-      padding: 18px;
-      border-radius: 16px;
-      border: 1px solid rgba(31, 74, 50, 0.08);
-      box-shadow: 0 10px 24px rgba(31, 74, 50, 0.08);
+    .resource-link {
+      font-size: 0.9rem;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
     }
 
-    footer {
-      background: var(--forest-dark);
-      color: #f0efe9;
-      padding: 26px 22px;
+    /* FOOTER (same style family as other pages) */
+
+    .site-footer {
+      border-top: 1px solid rgba(201, 190, 173, 0.9);
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      padding: 1.5rem 1.5rem 2rem;
+      background: rgba(246, 238, 224, 0.98);
     }
 
     .footer-inner {
-      max-width: 1100px;
+      max-width: var(--max-width);
       margin: 0 auto;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
-      font-size: 0.95rem;
+      gap: 0.9rem;
     }
 
     .footer-links {
       display: flex;
-      gap: 14px;
       flex-wrap: wrap;
+      gap: 0.8rem;
     }
 
     .footer-links a {
-      color: #f5efe4;
+      padding: 0.1rem 0.3rem;
+      border-radius: 999px;
     }
 
-    @media (max-width: 720px) {
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+    .footer-links a:hover {
+      background: rgba(226, 214, 196, 0.9);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .connect-section {
+        grid-template-columns: minmax(0, 1fr);
       }
 
-      nav ul {
+      .contact-card {
+        grid-template-columns: minmax(0, 1fr);
+        row-gap: 0.8rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .section,
+      .contact-hero,
+      .top-link,
+      .contact-cards {
+        padding-inline: 1.1rem;
+      }
+
+      .form-grid-two {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .btn {
         width: 100%;
-        justify-content: space-between;
-      }
-
-      .hero {
-        padding-top: 90px;
-      }
-
-      .hero-grid {
-        grid-template-columns: repeat(4, 1fr);
+        max-width: 240px;
       }
     }
   </style>
 </head>
 <body>
-  <header aria-label="Site header">
-    <div class="nav">
-      <a href="#top" class="brand">
-        <span class="leaf" aria-hidden="true"></span>
-        <span>The Garden School</span>
-      </a>
-      <nav aria-label="Primary navigation">
-        <ul>
-          <div class="nav-links">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="programs.html">Programs</a>
-  <a href="donate.html">Donate</a>
-  <a href="contact.html">Contact</a>
-  <a class="nav-donate" href="donate.html">Give Today</a>
-</div>
-
-  </header>
-
-  <main>
-  <section class="section" aria-labelledby="contact-page-heading">
-    <div class="section-heading">
-      <div class="section-kicker">Contact</div>
-      <h1 id="contact-page-heading" class="section-title">Enroll, refer a student, or get involved.</h1>
+  <div class="page">
+    <div class="top-link">
+      <a href="index.html">← Back to Home</a>
     </div>
 
-    <div class="contact-grid">
-      <div class="contact-card">
-        <div class="contact-list">
-          <div>
-            <div class="contact-item-label">Location</div>
-            <div class="contact-item-value">Hamden, Connecticut</div>
-          </div>
-          <div>
-            <div class="contact-item-label">Email</div>
-            <!-- Replace with your actual email -->
-            <div class="contact-item-value">
-              <a href="mailto:info@gardencollective.org">info@gardencollective.org</a>
-            </div>
-          </div>
-          <div>
-            <div class="contact-item-label">Interest Form</div>
-            <!-- Replace # with your real Google Form link -->
-            <div class="contact-item-value">
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                Complete our student / supporter interest form
-              </a>
-            </div>
+    <!-- HERO -->
+    <header class="contact-hero" aria-labelledby="contact-hero-title">
+      <div class="hero-pill">Get In Touch</div>
+      <h1 id="contact-hero-title" class="contact-hero-title">Let's Connect</h1>
+      <p class="contact-hero-subtitle">
+        Whether you're interested in enrolling, volunteering, or learning more —
+        we'd love to hear from you.
+      </p>
+    </header>
+
+    <!-- LOCATION + EMAIL CARDS -->
+    <section class="contact-cards" aria-label="Contact information">
+      <article class="contact-card">
+        <div class="contact-card-icon" aria-hidden="true">📍</div>
+        <div>
+          <div class="contact-card-title">Location</div>
+          <div class="contact-card-main">Hamden, Connecticut</div>
+          <div class="contact-card-note">
+            We teach from our home-based headquarters and community spaces in the area.
           </div>
         </div>
-        <p class="contact-note">
-          We currently teach from our home-based headquarters and community spaces in the Greater New Haven area. Exact
-          addresses are shared with students and visitors once they’re connected with our team.
-        </p>
+      </article>
+
+      <article class="contact-card">
+        <div class="contact-card-icon" aria-hidden="true">✉️</div>
+        <div>
+          <div class="contact-card-title">Email</div>
+          <!-- TODO: update to your final email if different -->
+          <div class="contact-card-main">
+            <a href="mailto:info@thegardencollective.org">info@thegardencollective.org</a>
+          </div>
+          <div class="contact-card-note">
+            We typically respond within 24–48 hours.
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <main>
+      <!-- FORM -->
+      <section class="section form-section" aria-labelledby="form-heading">
+        <div class="section-heading">
+          <div class="section-kicker">Get in touch</div>
+          <h2 id="form-heading" class="section-title">Send Us a Message</h2>
+          <p class="response-note">
+            Fill out the form below and we'll get back to you soon.
+          </p>
+        </div>
+
+        <!-- NOTE: for a real submission on a static site, point action to Formspree, Basin, etc. -->
+        <form action="#" method="post">
+          <div class="form-grid-two">
+            <div class="form-row">
+              <label for="name">
+                Name <span class="required">*</span>
+              </label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                placeholder="Your full name"
+                required
+              />
+            </div>
+            <div class="form-row">
+              <label for="email">
+                Email <span class="required">*</span>
+              </label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="your.email@example.com"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="phone">
+              Phone (optional)
+            </label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              placeholder="(123) 456-7890"
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="interest">
+              What are you interested in? <span class="required">*</span>
+            </label>
+            <input
+              id="interest"
+              name="interest"
+              type="text"
+              placeholder="e.g., Enrolling, volunteering, donating, general inquiry"
+              required
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="message">
+              Tell us a little about yourself <span class="required">*</span>
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Share anything you'd like us to know..."
+              required
+            ></textarea>
+          </div>
+
+          <div class="form-footer">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <p>
+              By submitting this form, you agree to receive occasional updates from The Garden School.
+            </p>
+          </div>
+        </form>
+      </section>
+
+      <!-- CONNECT + RESOURCES -->
+      <section class="section" aria-labelledby="connect-heading">
+        <div class="section-heading">
+          <div class="section-kicker">Connect with us</div>
+          <h2 id="connect-heading" class="section-title">Connect With Us</h2>
+        </div>
+
+        <div class="connect-section">
+          <div class="connect-body">
+            <p class="section-body">
+              Follow along for updates, student work, and community stories. We use our online spaces
+              to share what we're learning together, highlight youth voices, and post about upcoming
+              events and opportunities.
+            </p>
+          </div>
+
+          <aside class="resources-card" aria-label="Additional resources">
+            <h3>Additional Resources</h3>
+
+            <div class="resource-item">
+              <div class="resource-label">Student Interest Form →</div>
+              <div class="resource-desc">
+                For prospective students ready to enroll.
+              </div>
+              <!-- TODO: replace # with your actual student form link -->
+              <a href="#" class="resource-link" target="_blank" rel="noopener noreferrer">
+                Open student interest form
+              </a>
+            </div>
+
+            <div class="resource-item">
+              <div class="resource-label">Volunteer Application →</div>
+              <div class="resource-desc">
+                Share your skills and time with our community.
+              </div>
+              <!-- TODO: replace # with your actual volunteer form link -->
+              <a href="#" class="resource-link" target="_blank" rel="noopener noreferrer">
+                Open volunteer application
+              </a>
+            </div>
+
+            <div class="resource-item">
+              <div class="resource-label">Partnership Inquiry →</div>
+              <div class="resource-desc">
+                For organizations interested in collaboration.
+              </div>
+              <!-- TODO: replace # with your partnership/organization form link -->
+              <a href="#" class="resource-link" target="_blank" rel="noopener noreferrer">
+                Open partnership inquiry form
+              </a>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>
+          © <span id="year"></span> The Garden Collective, 501(c)(3). All rights reserved.
+          <br />
+          The Garden School is a free, community-supported education program
+          serving youth in Greater New Haven.
+        </div>
+        <div class="footer-links">
+          <!-- Replace with real socials / newsletter links -->
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">Newsletter</a>
+        </div>
       </div>
+    </footer>
+  </div>
 
-      <div>
-        <p class="section-body">
-          Whether you’re a young person looking for GED support, a caregiver or caseworker making a referral, or a neighbor who wants to help, we’d love to hear from you.
-        </p>
-        <p class="section-body">
-          Tell us a little about what you’re hoping for, and we’ll follow up with next steps, current schedule options, and ways to plug into the wider Garden Collective community.
-        </p>
-      </div>
-    </div>
-  </section>
-</main>
-
-
-  <footer aria-label="Site footer">
-    <div class="footer-inner">
-      <div>© <span aria-label="year">2024</span> The Garden Collective · 501(c)(3)</div>
-  <div class="nav-links">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="programs.html">Programs</a>
-  <a href="donate.html">Donate</a>
-  <a href="contact.html">Contact</a>
-  <a class="nav-donate" href="donate.html">Give Today</a>
-</div>
-
-    </div>
-  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
